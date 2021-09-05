@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://www.mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="test1">
+    <select id="getById" parameterType="java.lang.String" resultType="com.example.mybatis01.Student">
+        select *
+        from tab_student
+        where id = #{id}
+    </select>
+    <select id="getAll" parameterType="java.lang.String" resultType="com.example.mybatis01.Student">
+        select * from tab_student
+    </select>
+    <insert id="save" parameterType="com.example.mybatis01.Student">
+        insert into tab_student values (#{id},#{name},#{age});
+    </insert>
+    <delete id="del" parameterType="com.example.mybatis01.Student">
+        delete from tab_student where id = #{id}
+    </delete>
+    <update id="update">
+        update tab_student set name=#{name},age=#{age} where id=#{id}
+    </update>
+</mapper>
