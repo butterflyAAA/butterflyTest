@@ -2,5 +2,6 @@ package com.example.workspaceForGit;
 
 public class Person {
 
-    String s;
+    private String id;
+    private String name;
 }
